@@ -36,7 +36,7 @@ Go to Azure Portal https://portal.azure.com/ and create Storage account.
 
 Upload file to Storage account using console application that consumes messages from Service Bus.
 
-Follow the official guides 
-https://learn.microsoft.com/uk-ua/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=connection-string
-https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal
-https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/storage/Azure.Storage.Blobs
+Follow the official guides
+- https://learn.microsoft.com/uk-ua/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=connection-string
+- https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal
+- https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/storage/Azure.Storage.Blobs

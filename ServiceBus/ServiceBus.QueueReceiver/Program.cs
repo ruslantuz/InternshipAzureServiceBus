@@ -1,29 +1,30 @@
-﻿using Azure.Messaging.ServiceBus;
+﻿using Azure.Identity;
+using Azure.Messaging.ServiceBus;
+using Azure.Storage.Blobs;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
-ServiceBusClient client;
+ServiceBusClient busClient;
 
 // the processor that reads and processes messages from the queue
 ServiceBusProcessor processor;
 
-// The Service Bus client types are safe to cache and use as a singleton for the lifetime
-// of the application, which is best practice when messages are being published or read
-// regularly.
-//
-// Set the transport type to AmqpWebSockets so that the ServiceBusClient uses port 443. 
-// If you use the default AmqpTcp, make sure that ports 5671 and 5672 are open.
-
-// TODO: Replace the <NAMESPACE-CONNECTION-STRING> and <QUEUE-NAME> placeholders
 var clientOptions = new ServiceBusClientOptions()
 {
     TransportType = ServiceBusTransportType.AmqpWebSockets
 };
-client = new ServiceBusClient("Endpoint=sb://internship-servicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=NmIJiOGIUJUv2ALxFsYVWZqYcQZyHvoO4+ASbAJ728w=", clientOptions);
+busClient = new ServiceBusClient("Endpoint=sb://internship-servicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=NmIJiOGIUJUv2ALxFsYVWZqYcQZyHvoO4+ASbAJ728w=", clientOptions);
+
+Uri accountUri = new Uri("https://tuzstorage.blob.core.windows.net/");
+BlobClient blobClient = new BlobClient(accountUri, new DefaultAzureCredential());
+
+string connectionString = "DefaultEndpointsProtocol=https;AccountName=tuzstorage;AccountKey=vpgwCQvdSlrieBkLeUeAKAau+KjR7Y8hNNt5TJQmIUx/HEp66MMC+ZJ2KpEjEq0qRovS5n+0zez7+AStEItN+A==;EndpointSuffix=core.windows.net";
+string containerName = "internship-container";
+BlobContainerClient container = new BlobContainerClient(connectionString, containerName);
 
 // create a processor that we can use to process the messages
-// TODO: Replace the <QUEUE-NAME> placeholder
-processor = client.CreateProcessor("bus-queue", new ServiceBusProcessorOptions());
+processor = busClient.CreateProcessor("bus-queue", new ServiceBusProcessorOptions());
 
 try
 {
@@ -49,7 +50,7 @@ finally
     // Calling DisposeAsync on client types is required to ensure that network
     // resources and other unmanaged objects are properly cleaned up.
     await processor.DisposeAsync();
-    await client.DisposeAsync();
+    await busClient.DisposeAsync();
 }
 
 // handle received messages
@@ -57,6 +58,9 @@ async Task MessageHandler(ProcessMessageEventArgs args)
 {
     string body = args.Message.Body.ToString();
     Console.WriteLine($"Received: {body}");
+
+    string filePath = body;
+    container.UploadBlob("img.png", File.OpenRead(filePath));
 
     // complete the message. message is deleted from the queue. 
     await args.CompleteMessageAsync(args.Message);

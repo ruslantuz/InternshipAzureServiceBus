@@ -22,3 +22,7 @@ D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\obj\Debug\ne
 D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\obj\Debug\netcoreapp3.1\ServiceBus.QueueSender.dll
 D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\obj\Debug\netcoreapp3.1\ServiceBus.QueueSender.pdb
 D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\obj\Debug\netcoreapp3.1\ServiceBus.QueueSender.genruntimeconfig.cache
+D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
+D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\bin\Debug\netcoreapp3.1\System.IO.Hashing.dll
+D:\Fork\InternshipAzureServiceBus\ServiceBus\ServiceBus.QueueSender\obj\Debug\netcoreapp3.1\ServiceBus.QueueSender.csproj.AssemblyReference.cache

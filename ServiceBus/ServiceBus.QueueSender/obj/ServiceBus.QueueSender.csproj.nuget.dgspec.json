@@ -46,6 +46,10 @@
             "Azure.Messaging.ServiceBus": {
               "target": "Package",
               "version": "[7.17.2, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.19.1, )"
             }
           },
           "imports": [

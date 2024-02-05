@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus.QueueReceiver", "ServiceBus.QueueReceiver\ServiceBus.QueueReceiver.csproj", "{AE005E91-BB9C-496B-A338-3E7EDE17AB97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus.QueueSender", "ServiceBus.QueueSender\ServiceBus.QueueSender.csproj", "{8B62DD39-8316-4B80-8492-F39EB1845180}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE005E91-BB9C-496B-A338-3E7EDE17AB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE005E91-BB9C-496B-A338-3E7EDE17AB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE005E91-BB9C-496B-A338-3E7EDE17AB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE005E91-BB9C-496B-A338-3E7EDE17AB97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B62DD39-8316-4B80-8492-F39EB1845180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B62DD39-8316-4B80-8492-F39EB1845180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B62DD39-8316-4B80-8492-F39EB1845180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B62DD39-8316-4B80-8492-F39EB1845180}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {185AEC8E-F14F-4793-8FD8-C0AA732588D3}
+	EndGlobalSection
+EndGlobal
